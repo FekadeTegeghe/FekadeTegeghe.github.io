@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book List</title>
+    <script src="library.js"></script>
+</head>
+
+<body>
+
+    <form>
+        <p><label for="book_title">Book Title:</label><br />
+        <input type="text" id="new_title" name="book_title" size="104"><br /></p>
+        <p><label for="author_name">Author:</label><br />
+        <input type="text" id="new_author" name="author_name" size="104"><br /></p>
+        <p><label for="lib_id">Library ID:</label><br />
+        <input type="text" id="new_id" name="lib_id" size="104"><br /></p>
+
+        <p>
+            <input type="button" value="Add books" id="new_books" onclick="addBooks();"/>
+            <input type="button" value="Show titles" id="new_titles" onclick="showTitles();"/>
+            <input type="button" value="Show authors" id="new_authors" onclick="showAuthors();"/>
+            <input type="button" value="Show IDs" id="new_IDs" onclick="showID();"/>
+            <input type="button" value="Scramble" id="scramble_title" onclick="scramble();"/></p>
+        <textarea id="information" rows="10" cols="90"></textarea><br/>
+        <div id="test"></div>
+
+
+
+
+
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
