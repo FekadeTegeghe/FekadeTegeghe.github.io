@@ -12,6 +12,33 @@ Creates an object that contains the following information from the "this" object
 	cntReferences	// count of reference properties (use the typeof operator to compute this)
 }	
 */
+// let numProperties = () => {
+//   let count = 0;
+//   for (let prop in this.Person) {
+//     count++;
+//   }
+//   return count;
+// };
+
+// let cntShortName = () => {
+//   let count = 0;
+//   for (let key in this.Person) {
+//     if (key.length < 3) {
+//       count++;
+//     }
+//   }
+//   return count;
+// };
+
+// let cntReferences = () => {
+//   let count = 0;
+//   for (let prop in this.Person) {
+//     if (typeOf(Person.prop) === Object) {
+//       count++;
+//     }
+//   }
+//   return count;
+// };
 /**
  *
  * @param {number} numProperties is a number
@@ -19,46 +46,28 @@ Creates an object that contains the following information from the "this" object
  * @param {number} cntReferences is a number
  * @returns {number} count is a number
  */
-function analyzer(numProperties, cntShortName, cntReferences) {
-  this.numProperties = function () {
-    let count = 0;
-    for (let prop in person) {
+function analyzer() {
+  let counter = 0;
+  for (let pro in this) {
+    counter++;
+  }
+
+  let count = 0;
+  for (let key in this) {
+    if (key.length < 3) {
       count++;
     }
-    return count;
-  };
-  this.cntShortName = function () {
-    let count = 0;
-    for (let key in person) {
-      if (key.length < 3) {
-        count++;
-      }
+  }
+  let count1 = 0;
+  for (let key in this) {
+    if (typeof this[key] === "object") {
+      count1++;
     }
-    return count;
-  };
-  this.cntReferences = function () {
-    let count = 0;
-    for (let prop in person) {
-      if (typeOf(Person.prop) === Object) {
-        count++;
-      }
-    }
-    return count;
-  };
-}
-// let person = new Person("bob", "usa", [100, 90]);
-// Person.f = analyzer; // name too short
-// Person.x = 0; // name too short
+  }
 
-/* Constructor for a person object
-	Person(name, country, grades) creates object
-	{
-		name: name,  // person's name
-		county: country, // person's country
-		grades: grades,  // integer array of grades
-		computeGrade     // function that computes the grade from grades
-	}
-*/
+  return { numProperties: counter, cntShortName: count, cntReference: count1 };
+}
+
 function Person(name, country, grades) {
   this.name = name;
   this.country = country;
