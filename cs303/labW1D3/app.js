@@ -12,8 +12,14 @@ Creates an object that contains the following information from the "this" object
 	cntReferences	// count of reference properties (use the typeof operator to compute this)
 }	
 */
-
-function analyzer() {
+/**
+ *
+ * @param {number} numProperties is a number
+ * @param {number} cntShortName is a number
+ * @param {number} cntReferences is a number
+ * @returns {number} count is a number
+ */
+function analyzer(numProperties, cntShortName, cntReferences) {
   this.numProperties = function () {
     let count = 0;
     for (let prop in person) {
