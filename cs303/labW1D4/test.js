@@ -56,6 +56,7 @@ function mochaTests() {
     it("mixed", function () {
       let result = new ArrayDemo([1, "a", 2, "b", 3]).numbers.join(".");
       assert.equal(result, "1.2.3");
+
       result = new ArrayDemo([1, "a", 2, "b", 3]).strings.join(".");
       assert.equal(result, "a.b");
     });
