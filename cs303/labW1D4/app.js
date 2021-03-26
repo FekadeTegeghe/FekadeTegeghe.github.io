@@ -6,23 +6,33 @@
 function removeEvenCharacters(string) {
 	let str = "";
 	for(let i = 0; i<string.length; i++){
-		if(string !== "" && i%2 === 0){
-			str +=string[i];
-			return str;
+		if(string !== "" && i%2 === 1){
+			continue;
 		}else if(string = ""){
-			return "";
+			str = "";
 		}else if(string === null){
-			return "missing argument";
+			console.log("missing argument");
 		}else if(typeOf (string[i]) !== "string"){
-			return "argument not string";
+			console.log("argument not string");
+		}else{
+			str +=string[i];
 		}
+		return str;
 		}
-		removeEvenCharacters();
+		let txt = "abcd";
+		removeEvenCharacters(txt);
 
 // Sum the numbers that are greater than zero of array, e.g. sumPositiveNumbers([-1,4,5,-2,-3,10]) === 19
 // Must use the reduce method of the Array object to do this!!!
 function sumPositiveNumbers(array) {
-
+	let acum = 0;
+	for(let current of array){
+		if(current > 0){
+		array.reduce(function(acum, current){
+			acum += current;
+		}
+		)};
+return acum;
 }
 
 // Write a construction function
@@ -42,6 +52,13 @@ function ArrayDemo(array) {
 
 // Makes all negative numbers of the input array positive
 function makePositive(array) {
+	const inverted = array.map(n => {
+		if(n >= 0){
+			continue;
+		}
+		inverted = n*(-1);
+		return inverted;
+	})
 }
 
 // Replaces sequences of 0s with an "*", e.g.
