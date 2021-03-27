@@ -4,18 +4,19 @@
 
 // Remove the even characters from string, e.g removeEvenCharacters("abcd") === "bd"
 function removeEvenCharacters(string) {
+  let str = "";
   if (string === undefined) {
     return "missing argument";
   } else if (typeof string !== "string") {
     return "argument not string";
-  } else if ((string = null)) {
+  } else if (string === "") {
     return "";
+  } else {
+    for (let i = 1; i < string.length; i += 2) {
+      str = str + string[i];
+    }
+    return str;
   }
-  let str = "";
-  for (let i = 1; i < string.length; i + 2) {
-    str += string[i];
-  }
-  return str;
 }
 
 // Sum the numbers that are greater than zero of array, e.g. sumPositiveNumbers([-1,4,5,-2,-3,10]) === 19
@@ -49,22 +50,27 @@ function ArrayDemo(array) {
 
 // Makes all negative numbers of the input array positive
 function makePositive(array) {
-  for (let value of array) {
-    if (value < 0) {
-      value * -1;
-      return array.join(".");
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] < 0) {
+      array[i] = array[i] * -1;
     }
   }
+  return array.join(".");
 }
 
 // Replaces sequences of 0s with an "*", e.g.
 // removeZeros([3, 0, 0, 0, 5, 6, 0, 0, 7, 0]) returns [3, "*", 5, "*", 7, "*"];
 function removeZeros(array) {
   let arr = [];
-  for (let value of array) {
-    if (value !== 0) {
-      arr.push(value + ".");
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] !== array[i + 1]) {
+      arr.push(array[i]);
     }
   }
-  return arr.join("*.");
+  for (let j = 0; j < arr.length; j++) {
+    if (arr[j] === 0) {
+      arr[j] = "*";
+    }
+  }
+  return arr.join(".");
 }
