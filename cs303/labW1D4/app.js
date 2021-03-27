@@ -55,7 +55,7 @@ function makePositive(array) {
       array[i] = array[i] * -1;
     }
   }
-  return array.join(".");
+  return array;
 }
 
 // Replaces sequences of 0s with an "*", e.g.
@@ -72,5 +72,5 @@ function removeZeros(array) {
       arr[j] = "*";
     }
   }
-  return arr.join(".");
+  return arr;
 }
