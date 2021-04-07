@@ -1,6 +1,6 @@
 "use strict";
 //write a function that take an array with duplicates and returns an array containing that element & its count.
-let arr = [2, 3, 2, 3, 4, 3, 5, 3, 6, 3, 6]; //solution [3, 5]
+let arr = [2, 3, 2, 3, 4, 3, 5, 3, 6, 3, 6]; //solution [3, 5]  incomplete project
 function frequent(arr) {
   return arr.reduce((obj, item) => {
     if (!obj[item]) {
