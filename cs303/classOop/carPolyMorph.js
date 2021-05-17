@@ -1,7 +1,7 @@
 "use strict";
 //This is done without creating common interface and bad as we need to
 //modify the code in total every time new car is added. Price calculator need to be common method for all types of cars.
-//Each type of car should inherit from a super class Car.
+//Each type of car should inherit from a super class Car and override the method internally for specific car.
 class Car {
   constructor(brand, year, price, taxRate) {
     this.brand = brand;
